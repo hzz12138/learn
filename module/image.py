@@ -63,4 +63,35 @@ class ImageProcess:
         del outdataset
 
 
+def read_multi_bands(image_path):
+    """
+    读取多波段文件
+    :param image_path: 多波段文件路径
+    :return: 影像对象，影像元信息，影像矩阵
+    """
+    # 影像读取
+    image = ImageProcess(filepath=image_path)
+    # 读取影像元信息
+    image_info = image.read_img_info()
+    print(f"多波段影像元信息：{image_info}")
+    # 读取影像矩阵
+    image_data = image.read_img_data()
+    print(f"多波段矩阵大小：{image_data.shape}")
+    return image, image_info, image_data
 
+
+def read_single_band(band_path):
+    """
+    读取单波段文件
+    :param band_path: 单波段文件路径
+    :return: 影像对象，影像元信息，影像矩阵
+    """
+    # 影像读取
+    band = ImageProcess(filepath=band_path)
+    # 读取影像元信息
+    band_info = band.read_img_info()
+    print(f"单波段影像元信息：{band_info}")
+    # 读取影像矩阵
+    band_data = band.read_img_data()
+    print(f"单波段矩阵大小：{band_data.shape}")
+    return band, band_info, band_data
