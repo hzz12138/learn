@@ -185,3 +185,4 @@ if __name__ == "__main__":
     onnx.save(onnx.shape_inference.infer_shapes(onnx_model), modelData)
     # 显示网络结构
     netron.start(modelData)
+    #

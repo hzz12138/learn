@@ -109,7 +109,7 @@ if __name__ == '__main__':
     resunet = ResUNet(4, 1, hidden_channels).cuda()
 
     torchinfo.summary(resunet, input_size=(1, 4, 256, 256))
-
+    #
     # test = torch.randn([1, 4, 256, 256]).cuda()
     # # 设定网络保存路径
     # modelData = 'resunet_test.pth'
